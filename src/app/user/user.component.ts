@@ -3,6 +3,7 @@ import { Component, computed, EventEmitter, Input, input, Output, signal } from 
 import { DUMMY_USERS } from '../dummy-users';
 
 import { type User } from './user.model'
+import { CardComponent } from "../shared/card/card.component";
  
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
@@ -11,6 +12,7 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   standalone: true,
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
+  imports: [CardComponent],
 })
 export class UserComponent {
   @Input({required: true}) user!: User;
